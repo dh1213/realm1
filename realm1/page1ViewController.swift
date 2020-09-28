@@ -1,0 +1,121 @@
+//
+//  page1ViewController.swift
+//  realm1
+//
+//  Created by 土居浩規 on 2020/09/18.
+//  Copyright © 2020 土居浩規. All rights reserved.
+//
+import UIKit
+import RealmSwift
+
+class page1ViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate {
+
+    @IBOutlet weak var todoTextFiled: UITextField!
+    @IBOutlet weak var todoTableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
+    //class TodoModel: Object{
+   //     @objc dynamic var todo: String? = nil
+   // }
+   // class page1: Object{
+   //     @objc dynamic var page1nakami: String? = nil
+  //  }
+    var itemList2: Results<TodoModel2>!
+
+    // Add ボタンをクリックした際に実行する処理
+    @IBAction func tapAddButton(_ sender: Any) {
+            let instancedTodoModel2:TodoModel2 = TodoModel2()
+        instancedTodoModel2.todo2 = self.todoTextFiled.text
+
+        let realmInstance = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        try! realmInstance.write{
+            realmInstance.add(instancedTodoModel2)
+        }
+        self.todoTableView.reloadData()
+    }
+
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // UITableViewDataSource を self に設定
+        self.todoTableView.dataSource = self
+        // UITableViewDelegate を self に設定
+        self.todoTableView.delegate = self
+
+        
+        let realmInstance = try! Realm()
+        self.itemList2 =
+            realmInstance.objects(TodoModel2.self)
+        self.todoTableView.reloadData()
+    }
+}
+
+extension page1ViewController: UITableViewDataSource{
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.itemList2.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let testCell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "testCell")!
+        let item: TodoModel2 = self.itemList2[(indexPath as NSIndexPath).row]
+        testCell.textLabel?.text = item.todo2
+        return testCell
+    }
+//上は絶対いる。UITableViewDataSource宣言したらいる。
+    // テーブルビューの編集を許可
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    // テーブルビューのセルとデータを削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            // データを削除
+            let realmInstance = try! Realm()
+            try! realmInstance.write {
+                realmInstance.delete(itemList2[indexPath.row])
+            }
+            // セルを削除
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("セル\(indexPath)が選択されました")
+        showAlertController(indexPath)
+    }
+
+    // テーブルビューのセルをクリックしたら、アラートコントローラを表示する処理
+    func showAlertController(_ indexPath: IndexPath){
+        let alertController: UIAlertController = UIAlertController(title: "\(String(indexPath.row))番目の ToDo を編集", message: itemList2[indexPath.row].todo2, preferredStyle: .alert)
+        // アラートコントローラにテキストフィールドを表示 テキストフィールドには入力された情報を表示させておく処理
+        alertController.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.text = self.itemList2[indexPath.row].todo2})
+        // アラートコントローラに"OK"ボタンを表示 "OK"ボタンをクリックした際に、テキストフィールドに入力した文字で更新する処理を実装
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            (action) -> Void in self.updateAlertControllerText(alertController,indexPath)
+        }))
+        // アラートコントローラに"Cancel"ボタンを表示
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    // "OK"ボタンをクリックした際に、テキストフィールドに入力した文字で更新
+    func updateAlertControllerText(_ alertcontroller:UIAlertController, _ indexPath: IndexPath) {
+        // guard を利用して、nil チェック
+        guard let textFields = alertcontroller.textFields else {return}
+        guard let text = textFields[0].text else {return}
+
+        // UIAlertController に入力された文字をコンソールに出力
+        print(text)
+
+        // Realm に保存したデータを UIAlertController に入力されたデータで更新
+        let realmInstance = try! Realm()
+        try! realmInstance.write{
+            itemList2[indexPath.row].todo2 = text
+        }
+        self.todoTableView.reloadData()
+    }
+}
