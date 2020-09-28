@@ -262,7 +262,7 @@
         <!--Page 1hyouji View Controller-->
         <scene sceneID="jNq-9F-oDl">
             <objects>
-                <viewController id="BkW-s7-R4d" customClass="page1hyoujiViewController" customModule="realm1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BkW-s7-R4d" customClass="Page1hyoujiViewController" customModule="realm1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ggd-r8-SJ3">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,6 +287,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="3gU-oc-9K8"/>
+                    <connections>
+                        <outlet property="todoTableView" destination="DbI-Wh-r8Z" id="pRG-vl-MlR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXK-mE-HmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
