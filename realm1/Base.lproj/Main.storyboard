@@ -225,24 +225,24 @@
         <!--Pic View Controller-->
         <scene sceneID="KjB-WM-2c5">
             <objects>
-                <viewController id="fec-sC-4Mw" customClass="picViewController" customModule="realm1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fec-sC-4Mw" customClass="PicViewController" customModule="realm1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZnR-L5-Scy">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6X-Qd-eGR">
-                                <rect key="frame" x="46" y="156" width="676" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="702-Uv-GKy">
-                                <rect key="frame" x="168" y="478" width="432" height="185"/>
+                                <rect key="frame" x="189" y="484" width="432" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6X-Qd-eGR">
+                                <rect key="frame" x="67" y="146" width="676" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7M0-4P-cU2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -250,10 +250,14 @@
                     <navigationItem key="navigationItem" id="Pbb-6p-RVF">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="w9K-mp-eKN">
                             <connections>
-                                <segue destination="BkW-s7-R4d" kind="show" id="JHd-98-VlX"/>
+                                <segue destination="BkW-s7-R4d" kind="show" id="BmR-gr-J0H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pickerview" destination="L6X-Qd-eGR" id="KeW-h4-Sei"/>
+                        <outlet property="sntksLbl" destination="702-Uv-GKy" id="wlx-tp-Dnk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVd-ht-J5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -262,7 +266,7 @@
         <!--Page 1hyouji View Controller-->
         <scene sceneID="jNq-9F-oDl">
             <objects>
-                <viewController id="BkW-s7-R4d" customClass="page1hyoujiViewController" customModule="realm1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BkW-s7-R4d" customClass="Page1hyoujiViewController" customModule="realm1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ggd-r8-SJ3">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,6 +291,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="3gU-oc-9K8"/>
+                    <connections>
+                        <outlet property="todoTableView2" destination="DbI-Wh-r8Z" id="gJ7-6R-iI1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXK-mE-HmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

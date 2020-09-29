@@ -12,31 +12,31 @@ import RealmSwift
 class Page1hyoujiViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource{
 
     // セルの内容を返すメソッド
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {let testCell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "testCell2")!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {let testCell2:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "testCell2")!
         let item: TodoModel2 = self.itemList2[(indexPath as NSIndexPath).row]
-        testCell.textLabel?.text = item.todo2
-        return testCell}
+        testCell2.textLabel?.text = item.todo2
+        return testCell2}
     // セルの行数を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.itemList2.count
         
     }
-    @IBOutlet weak var todoTableView: UITableView!
+    @IBOutlet weak var todoTableView2: UITableView!
     
     var itemList2: Results<TodoModel2>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // UITableViewDataSource を self に設定
-        self.todoTableView.dataSource = self
+        self.todoTableView2.dataSource = self
         // UITableViewDelegate を self に設定
-        self.todoTableView.delegate = self
+        self.todoTableView2.delegate = self
 
         
         let realmInstance = try! Realm()
         self.itemList2 =
             realmInstance.objects(TodoModel2.self)
-        self.todoTableView.reloadData()
+        self.todoTableView2.reloadData()
     }
 }
     

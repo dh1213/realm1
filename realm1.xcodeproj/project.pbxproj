@@ -16,7 +16,7 @@
 		6F368A1625145CB600CCFE2A /* page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F368A1525145CB600CCFE2A /* page1ViewController.swift */; };
 		6F368A1925145CC400CCFE2A /* page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F368A1825145CC400CCFE2A /* page2ViewController.swift */; };
 		6F368A1D251474E200CCFE2A /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F368A1C251474E200CCFE2A /* pickerViewController.swift */; };
-		6F368A2025148B7E00CCFE2A /* picViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F368A1F25148B7E00CCFE2A /* picViewController.swift */; };
+		6F368A2025148B7E00CCFE2A /* PicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F368A1F25148B7E00CCFE2A /* PicViewController.swift */; };
 		6FD1BEE1251C752600348C5F /* page1hyoujiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD1BEE0251C752600348C5F /* page1hyoujiViewController.swift */; };
 		6FEB08D625119EBE00BAFFA9 /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEB08D525119EBE00BAFFA9 /* RealmViewController.swift */; };
 		A5379A97FABFA13AB7DF0132 /* Pods_realm1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26566B3B85438049D8EE7606 /* Pods_realm1.framework */; };
@@ -35,7 +35,7 @@
 		6F368A1525145CB600CCFE2A /* page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1ViewController.swift; sourceTree = "<group>"; };
 		6F368A1825145CC400CCFE2A /* page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page2ViewController.swift; sourceTree = "<group>"; };
 		6F368A1C251474E200CCFE2A /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
-		6F368A1F25148B7E00CCFE2A /* picViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picViewController.swift; sourceTree = "<group>"; };
+		6F368A1F25148B7E00CCFE2A /* PicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicViewController.swift; sourceTree = "<group>"; };
 		6FD1BEE0251C752600348C5F /* page1hyoujiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1hyoujiViewController.swift; sourceTree = "<group>"; };
 		6FEB08D525119EBE00BAFFA9 /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
 		8A835CF6F3949EE0699057D6 /* Pods-realm1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realm1.release.xcconfig"; path = "Target Support Files/Pods-realm1/Pods-realm1.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 				6F368A1525145CB600CCFE2A /* page1ViewController.swift */,
 				6F368A1825145CC400CCFE2A /* page2ViewController.swift */,
 				6F368A1C251474E200CCFE2A /* pickerViewController.swift */,
-				6F368A1F25148B7E00CCFE2A /* picViewController.swift */,
+				6F368A1F25148B7E00CCFE2A /* PicViewController.swift */,
 				6FD1BEE0251C752600348C5F /* page1hyoujiViewController.swift */,
 				6F2A9EC2251193240067CE92 /* Main.storyboard */,
 				6F2A9EC5251193260067CE92 /* Assets.xcassets */,
@@ -229,7 +229,7 @@
 				6F2A9EC1251193240067CE92 /* ViewController.swift in Sources */,
 				6F368A1625145CB600CCFE2A /* page1ViewController.swift in Sources */,
 				6F368A1D251474E200CCFE2A /* pickerViewController.swift in Sources */,
-				6F368A2025148B7E00CCFE2A /* picViewController.swift in Sources */,
+				6F368A2025148B7E00CCFE2A /* PicViewController.swift in Sources */,
 				6F2A9EBD251193240067CE92 /* AppDelegate.swift in Sources */,
 				6F2A9EBF251193240067CE92 /* SceneDelegate.swift in Sources */,
 				6FD1BEE1251C752600348C5F /* page1hyoujiViewController.swift in Sources */,

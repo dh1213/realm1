@@ -15,7 +15,9 @@ class PickerViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var label: UILabel!
     
     
-       let dataList = [
+        
+        
+           let dataList = [
        "あ","い","う","え",
        "お","か","き","く",
        "け","こ","さ","し",
