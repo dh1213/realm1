@@ -26,15 +26,20 @@ class TodoModel: Object{
 class page1: Object{
     @objc dynamic var page1nakami: String? = nil
 }
+
+//page2-picview-pickerview2
 class page2: Object{
     @objc dynamic var page2nakami: String? = nil
+}
+class page3: Object{
+    @objc dynamic var page3nakami: String? = nil
 }
 class Obj: Object{
    
    @objc dynamic var name: String?
 
 }
-//page1
+//page1-picview--pickerview1
 class TodoModel2: Object{
     @objc dynamic var todo2: String? = nil
 }

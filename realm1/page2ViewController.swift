@@ -22,10 +22,10 @@ class page2ViewController:UIViewController,UITextFieldDelegate,UITableViewDelega
     //realmファイルのrealmbrowserへの書き出し
     print(Realm.Configuration.defaultConfiguration.fileURL!)
     //
-    let obj = realm.objects(Obj.self)
+    let obj = realm.objects(page2.self)
        
        for objData in obj{
-           label.text = objData.name
+           label.text = objData.page2nakami
        }
             
        textField.delegate = self
@@ -40,9 +40,9 @@ class page2ViewController:UIViewController,UITextFieldDelegate,UITableViewDelega
    }
   
     @IBAction func saveButton(_ sender: Any) {
-       let obj = Obj()
-       obj.name = textField.text
-       label.text = obj.name
+       let obj = page2()
+       obj.page2nakami = textField.text
+       label.text = obj.page2nakami
        
        let realm = try! Realm()
        try! realm.write {
