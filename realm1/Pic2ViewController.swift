@@ -21,24 +21,6 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     
 //    let list1:[String] = ["1","2","3","4","5","6","7"]
 //    let list2:[String] = ["いち","に","さん","よん","ご",]
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    pickerView.delegate = self
-    pickerView.dataSource = self
-        //ピッカーの初期値
-    pickerView.selectRow(0, inComponent: 0, animated: false)
-    pickerView.selectRow(1, inComponent: 1, animated: false)
-        
-        //Realmインスタンス***追加***
-    let realm = try! Realm()
-    list1 = realm.objects(TodoModel2.self)
-    list2 = realm.objects(TodoModel2.self)
-        //***
-    }
-    
     // ドラムロールの列数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
@@ -70,6 +52,7 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     // ドラムロール選択時
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
+        
         case 0:
             label1.text = list1[row].todo2
         case 1:
@@ -78,6 +61,39 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
             break
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    pickerView.delegate = self
+    pickerView.dataSource = self
+        //Realmインスタンス***追加***
+    let realm = try! Realm()
+    list1 = realm.objects(TodoModel2.self)
+    list2 = realm.objects(TodoModel2.self)
+        //***
+        //ピッカーの初期値
+    pickerView.selectRow(0, inComponent: 0, animated: false)
+    pickerView.selectRow(1, inComponent: 1, animated: false)
+    
+    }
+    //***
+  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            //画面遷移時に呼ばれます。ここでは直接Labelのtextに値を渡すのではなく
+            //DestinationViewControllerのメンバに値を渡します。
+            //ここでpickerViewで選択したrowを渡したほうが変な挙動になりにくいという私見があるので
+            //こちらを採用しています。
+    //        let selectedRow = pickerView.selectedRow(inComponent: 0)
+
+   //         if let destination = segue.destination as? PicnaiyouViewController {
+   //             destination.labelText = list1[selectedRow]
+    //       } else {
+   //             fatalError()
+   //         }
+
+  //      }
+
+    //***
 }
     
 

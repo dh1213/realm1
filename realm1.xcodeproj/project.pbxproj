@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6F013FC42526E5A600954D59 /* Pic2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F013FC32526E5A600954D59 /* Pic2ViewController.swift */; };
+		6F013FC82527014C00954D59 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F013FC72527014C00954D59 /* CameraViewController.swift */; };
 		6F2A9EBD251193240067CE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A9EBC251193240067CE92 /* AppDelegate.swift */; };
 		6F2A9EBF251193240067CE92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A9EBE251193240067CE92 /* SceneDelegate.swift */; };
 		6F2A9EC1251193240067CE92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A9EC0251193240067CE92 /* ViewController.swift */; };
 		6F2A9EC4251193240067CE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2A9EC2251193240067CE92 /* Main.storyboard */; };
 		6F2A9EC6251193260067CE92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2A9EC5251193260067CE92 /* Assets.xcassets */; };
 		6F2A9EC9251193260067CE92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2A9EC7251193260067CE92 /* LaunchScreen.storyboard */; };
+		6F3340EA252806660026F76C /* PicnaiyouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3340E9252806660026F76C /* PicnaiyouViewController.swift */; };
 		6F368A1625145CB600CCFE2A /* page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F368A1525145CB600CCFE2A /* page1ViewController.swift */; };
 		6F368A1925145CC400CCFE2A /* page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F368A1825145CC400CCFE2A /* page2ViewController.swift */; };
 		6F368A1D251474E200CCFE2A /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F368A1C251474E200CCFE2A /* pickerViewController.swift */; };
@@ -27,6 +29,7 @@
 /* Begin PBXFileReference section */
 		26566B3B85438049D8EE7606 /* Pods_realm1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_realm1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F013FC32526E5A600954D59 /* Pic2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pic2ViewController.swift; sourceTree = "<group>"; };
+		6F013FC72527014C00954D59 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		6F2A9EB9251193240067CE92 /* realm1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = realm1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F2A9EBC251193240067CE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F2A9EBE251193240067CE92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		6F2A9EC5251193260067CE92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F2A9EC8251193260067CE92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F2A9ECA251193260067CE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F3340E9252806660026F76C /* PicnaiyouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicnaiyouViewController.swift; sourceTree = "<group>"; };
 		6F368A1525145CB600CCFE2A /* page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1ViewController.swift; sourceTree = "<group>"; };
 		6F368A1825145CC400CCFE2A /* page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page2ViewController.swift; sourceTree = "<group>"; };
 		6F368A1C251474E200CCFE2A /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
@@ -93,11 +97,13 @@
 				6F2A9EC0251193240067CE92 /* ViewController.swift */,
 				6FEB08D525119EBE00BAFFA9 /* RealmViewController.swift */,
 				6F368A1525145CB600CCFE2A /* page1ViewController.swift */,
+				6F013FC72527014C00954D59 /* CameraViewController.swift */,
 				6F368A1825145CC400CCFE2A /* page2ViewController.swift */,
 				6FD1E18625230EEA005CE6E1 /* Page3ViewController.swift */,
 				6F368A1C251474E200CCFE2A /* pickerViewController.swift */,
 				6F368A1F25148B7E00CCFE2A /* PicViewController.swift */,
 				6F013FC32526E5A600954D59 /* Pic2ViewController.swift */,
+				6F3340E9252806660026F76C /* PicnaiyouViewController.swift */,
 				6FD1BEE0251C752600348C5F /* page1hyoujiViewController.swift */,
 				6F2A9EC2251193240067CE92 /* Main.storyboard */,
 				6F2A9EC5251193260067CE92 /* Assets.xcassets */,
@@ -235,11 +241,13 @@
 				6F013FC42526E5A600954D59 /* Pic2ViewController.swift in Sources */,
 				6F2A9EC1251193240067CE92 /* ViewController.swift in Sources */,
 				6FD1E18725230EEA005CE6E1 /* Page3ViewController.swift in Sources */,
+				6F013FC82527014C00954D59 /* CameraViewController.swift in Sources */,
 				6F368A1625145CB600CCFE2A /* page1ViewController.swift in Sources */,
 				6F368A1D251474E200CCFE2A /* pickerViewController.swift in Sources */,
 				6F368A2025148B7E00CCFE2A /* PicViewController.swift in Sources */,
 				6F2A9EBD251193240067CE92 /* AppDelegate.swift in Sources */,
 				6F2A9EBF251193240067CE92 /* SceneDelegate.swift in Sources */,
+				6F3340EA252806660026F76C /* PicnaiyouViewController.swift in Sources */,
 				6FD1BEE1251C752600348C5F /* page1hyoujiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,14 +24,35 @@ class PickerViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
       "す","せ"
    ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-                      
-        // Delegate設定
-        pickerView.delegate = self
-        pickerView.dataSource = self
-           
+    
+    
+//***<
+        
+
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            //画面遷移時に呼ばれます。ここでは直接Labelのtextに値を渡すのではなく
+            //DestinationViewControllerのメンバに値を渡します。
+            //ここでpickerViewで選択したrowを渡したほうが変な挙動になりにくいという私見があるので
+            //こちらを採用しています。
+            let selectedRow = pickerView.selectedRow(inComponent: 0)
+            if let destination = segue.destination as? PicnaiyouViewController {
+            destination.labelText = dataList[selectedRow]
+            } else {
+            fatalError()
+            }
+
+        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
+    override func viewDidLoad() {
+            super.viewDidLoad()
+        
+    pickerView.delegate = self
+    pickerView.dataSource = self
+    }
+    //***>
+    
     
     // UIPickerViewの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
