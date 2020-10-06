@@ -10,24 +10,24 @@ import RealmSwift
 
 class PicnaiyouViewController: UIViewController {
 
-    var labelText = "" //ここで値を受け取ります
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
     
-    @IBOutlet var destinationLabel: UILabel!
-
+    
     override func viewDidLoad() {
-            super.viewDidLoad()
-        }
-
-        override func viewWillAppear(_ animated: Bool) {
-            //Labelに書き込むならviewWillAppearなんかで行うといい具合かと
-            super.viewWillAppear(animated)
-            destinationLabel.text = labelText
-        }
-
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-        }
-//***pic2のこの部分消す
+           super.viewDidLoad()
+           
+    let realm = try! Realm()
+    let obj = realm.objects(pic2picnaiyou.self)
+           
+    for objData in obj{
+    label1.text = objData.pic2no1
+    }
+    for objData in obj{
+    label2.text = objData.pic2no2
+    }
     
+}
+   
 
 }

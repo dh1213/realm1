@@ -77,6 +77,16 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     pickerView.selectRow(1, inComponent: 1, animated: false)
     
     }
+    override func viewWillDisappear(_ animated: Bool) {
+
+    let obj = pic2picnaiyou()
+    obj.pic2no1 = label1.text
+    obj.pic2no2 = label2.text
+    let realm = try! Realm()
+    try! realm.write {
+        realm.add(obj)
+       }
+    }
     //***
   //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             //画面遷移時に呼ばれます。ここでは直接Labelのtextに値を渡すのではなく

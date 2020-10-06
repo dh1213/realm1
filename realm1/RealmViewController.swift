@@ -43,23 +43,7 @@ class Obj: Object{
 class TodoModel2: Object{
     @objc dynamic var todo2: String? = nil
 }
-class Cat: Object {
-  @objc dynamic var name = ""
-  @objc dynamic var age = 0
-}
-
-class RealmStudent: Object {
-    dynamic var id : Int = 0;
-    dynamic var name = "";
-    dynamic var age: Int = 0;
-}
-
-class Task: Object {
-    @objc dynamic var taskTitle: String = ""
-    //Listの定義
-    let tickets = List<Ticket>()
-}
-
-class Ticket: Object {
-    @objc dynamic var ticketTitle: String = ""
+class pic2picnaiyou: Object{
+    @objc dynamic var pic2no1: String? = nil
+    @objc dynamic var pic2no2: String? = nil
 }

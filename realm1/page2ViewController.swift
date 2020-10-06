@@ -49,4 +49,5 @@ class page2ViewController:UIViewController,UITextFieldDelegate,UITableViewDelega
            realm.add(obj)
        }
    }
+    
 }
