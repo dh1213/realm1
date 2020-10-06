@@ -349,7 +349,7 @@
         <!--Picnaiyou View Controller-->
         <scene sceneID="9gl-KN-r3A">
             <objects>
-                <viewController id="lcr-lg-KCr" customClass="PicnaiyouViewController" sceneMemberID="viewController">
+                <viewController id="lcr-lg-KCr" customClass="PicnaiyouViewController" customModule="realm1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FNt-vu-5Iw">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
