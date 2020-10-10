@@ -17,8 +17,15 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UII
 
         // Do any additional setup after loading the view.
     }
-    
+    //***＜画面遷移で画像を保存
+    override func viewWillDisappear(_ animated: Bool) {
 
+    
+       
+      
+    }
+    //***＞画面遷移で画像を保存
+    
     /*
     // MARK: - Navigation
 

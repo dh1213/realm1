@@ -16,11 +16,10 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var pickerView: UIPickerView!
     
     let realm = try! Realm()
+    //var list1: Results <TodoModel2>!
     var list1: Results <TodoModel2>!
-    var list2: Results <TodoModel2>!
+    var list2: Results <TodoModel>!
     
-//    let list1:[String] = ["1","2","3","4","5","6","7"]
-//    let list2:[String] = ["いち","に","さん","よん","ご",]
     // ドラムロールの列数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
@@ -30,9 +29,9 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView,numberOfRowsInComponent component: Int) -> Int {
     switch component {
      case 0:
-      return list1.count
+        return list1.count+list2.count
      case 1:
-      return list2.count
+        return list1.count+list2.count
      default:
       return 0
         }
@@ -41,9 +40,17 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
-            return list1[row].todo2
+            //***<
+            if list2.count = 0 {
+                    let data = list1
+            } else {
+                    let data = list2[component.row - list1.count]
+            }
+            return list1[row]
+            //***>
+            //return list1[row].todo2 list2[row].todo2
         case 1:
-            return list2[row].todo2
+            return list2[row].todo
         default:
             return "error"
         }
@@ -56,7 +63,7 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
         case 0:
             label1.text = list1[row].todo2
         case 1:
-            label2.text = list2[row].todo2
+            label2.text = list2[row].todo
         default:
             break
         }
@@ -70,7 +77,7 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
         //Realmインスタンス***追加***
     let realm = try! Realm()
     list1 = realm.objects(TodoModel2.self)
-    list2 = realm.objects(TodoModel2.self)
+    list2 = realm.objects(TodoModel.self)
         //***
         //ピッカーの初期値
     pickerView.selectRow(0, inComponent: 0, animated: false)
@@ -88,20 +95,7 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
        }
     }
     //***
-  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            //画面遷移時に呼ばれます。ここでは直接Labelのtextに値を渡すのではなく
-            //DestinationViewControllerのメンバに値を渡します。
-            //ここでpickerViewで選択したrowを渡したほうが変な挙動になりにくいという私見があるので
-            //こちらを採用しています。
-    //        let selectedRow = pickerView.selectedRow(inComponent: 0)
-
-   //         if let destination = segue.destination as? PicnaiyouViewController {
-   //             destination.labelText = list1[selectedRow]
-    //       } else {
-   //             fatalError()
-   //         }
-
-  //      }
+  
 
     //***
 }
