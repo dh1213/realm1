@@ -41,12 +41,17 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
         switch component {
         case 0:
             //***<
-            if list2.count = 0 {
-                    let data = list1
-            } else {
-                    let data = list2[component.row - list1.count]
+            if row < list1.count {
+                let data  = list1[row]
+            //参考では...でしたがここに何が入るのですか？
+                
+            } else if row < list1.count + list2.count {
+                    let data  = list1[row - list1.count]
+                //参考では...でしたがここに何が入るのですか？
+                }
+
+                return cell
             }
-            return list1[row]
             //***>
             //return list1[row].todo2 list2[row].todo2
         case 1:
