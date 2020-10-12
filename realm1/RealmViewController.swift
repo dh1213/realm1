@@ -37,7 +37,6 @@ class page3: Object{
 class Obj: Object{
    
    @objc dynamic var name: String?
-
 }
 //page1-picview--pickerview1
 class TodoModel2: Object{
@@ -46,4 +45,7 @@ class TodoModel2: Object{
 class pic2picnaiyou: Object{
     @objc dynamic var pic2no1: String? = nil
     @objc dynamic var pic2no2: String? = nil
+}
+class cameratext: Object{
+    @objc dynamic var cametx: String? = nil
 }

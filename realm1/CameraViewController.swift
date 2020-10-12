@@ -7,36 +7,50 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CameraViewController: UIViewController ,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+    @IBOutlet weak var textField1: UITextField!
+    @IBOutlet weak var textField2: UITextField!
+    @IBOutlet weak var textField3: UITextField!
+    @IBOutlet weak var textField4: UITextField!
+    
    
-    var tapNum: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let realm = try! Realm()
+        let obj = realm.objects(cameratext.self)
+           
+           for objData in obj{
+            textField1.text = objData.cametx
+            textField2.text = objData.cametx
+            textField3.text = objData.cametx
+            textField4.text = objData.cametx
         // Do any additional setup after loading the view.
     }
     //***＜画面遷移で画像を保存
-    override func viewWillDisappear(_ animated: Bool) {
+    func viewWillDisappear(_ animated: Bool) {
 
-    
-       
+    let obj = cameratext()
+    obj.cametx = textField1.text
+    obj.cametx = textField2.text
+    obj.cametx = textField3.text
+    obj.cametx = textField4.text
+    let realm = try! Realm()
+    try! realm.write {
+    realm.add(obj)
+        }
       
     }
     //***＞画面遷移で画像を保存
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBOutlet weak var Picimage1: UIImageView!
-    @IBAction func camerab1(_ sender: Any) {
+        var tapNum: Int = 0
+        
+        
+        
+        weak var Picimage1: UIImageView!
+   func camerab1(_ sender: Any) {
         tapNum = 0
        if UIImagePickerController.isSourceTypeAvailable(.camera){
     print("カメラは利用できます")
@@ -50,8 +64,8 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UII
     }
 }
     
-    @IBOutlet weak var Picimage2: UIImageView!
-    @IBAction func camerab2(_ sender: Any) {
+        weak var Picimage2: UIImageView!
+        func camerab2(_ sender: Any) {
     
         tapNum = 1
            if UIImagePickerController.isSourceTypeAvailable(.camera){
@@ -67,8 +81,8 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UII
     }
        
     
-    @IBOutlet weak var Picimage3: UIImageView!
-    @IBAction func camerab3(_ sender: Any) {
+        weak var Picimage3: UIImageView!
+        func camerab3(_ sender: Any) {
         tapNum = 2
            if UIImagePickerController.isSourceTypeAvailable(.camera){
         print("カメラは利用できます")
@@ -81,8 +95,8 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UII
         print("カメラは利用できません")
         }
     }
-    @IBOutlet weak var Picimage4: UIImageView!
-    @IBAction func camerab4(_ sender: Any) {
+        weak var Picimage4: UIImageView!
+        func camerab4(_ sender: Any) {
         tapNum = 3
            if UIImagePickerController.isSourceTypeAvailable(.camera){
         print("カメラは利用できます")
@@ -121,4 +135,4 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UII
                 }
             }
     
-    
+}
