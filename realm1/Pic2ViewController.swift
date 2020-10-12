@@ -40,35 +40,47 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
-            //***<
             if row < list1.count {
                 let data  = list1[row]
-            //参考では...でしたがここに何が入るのですか？
+                return data.todo2
                 
-            } else if row < list1.count + list2.count {
-                    let data  = list1[row - list1.count]
-                //参考では...でしたがここに何が入るのですか？
-                }
-
-                return cell
             }
-            //***>
-            //return list1[row].todo2 list2[row].todo2
+            let data  = list2[row - list1.count]
+            return data.todo
         case 1:
-            return list2[row].todo
+            if row < list1.count {
+                let data  = list1[row]
+                return data.todo2
+
+            }
+            let data  = list2[row - list1.count]
+            return data.todo
         default:
-            return "error"
+            return nil
         }
     }
     
     // ドラムロール選択時
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
-        
         case 0:
-            label1.text = list1[row].todo2
+            if row < list1.count {
+                let data  = list1[row]
+                label1.text = data.todo2
+
+            } else if row < list1.count + list2.count {
+                let data  = list2[row - list1.count]
+                label1.text = data.todo
+            }
         case 1:
-            label2.text = list2[row].todo
+            if row < list1.count {
+                let data  = list1[row]
+                label2.text = data.todo2
+
+            } else if row < list1.count + list2.count {
+                let data  = list2[row - list1.count]
+                label2.text = data.todo
+            }
         default:
             break
         }
