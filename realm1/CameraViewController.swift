@@ -41,11 +41,15 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UIT
     override func viewWillDisappear(_ animated: Bool) {
 
     let realm = try! Realm()
-        let dictionary: [Any] =
-            [[textField1.text],
-             [textField2.text],
-             [textField3.text],
-             [textField4.text]]
+        let dictionary: [String: Any] = [
+            "kekkaTitle": "",
+            "list3": [
+                ["cametx": textField1.text],
+                ["cametx": textField2.text],
+                ["cametx": textField3.text],
+                ["cametx": textField4.text]
+            ]
+        ]
 
             let task = kekka(value: dictionary) //Taskモデルのインスタンスの作成
 
