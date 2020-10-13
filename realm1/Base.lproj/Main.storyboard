@@ -90,24 +90,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzf-26-lI2">
-                                <rect key="frame" x="606" y="135" width="46" height="34"/>
+                                <rect key="frame" x="606" y="136" width="46" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="camerab1:" destination="CQs-Fn-uB2" eventType="touchUpInside" id="ZCH-N7-J11"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nh-dN-LDD">
                                 <rect key="frame" x="606" y="330" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="camerab2:" destination="CQs-Fn-uB2" eventType="touchUpInside" id="epT-xK-uIE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-ue-q3P">
                                 <rect key="frame" x="606" y="530" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="camerab3:" destination="CQs-Fn-uB2" eventType="touchUpInside" id="gIx-7X-xQK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvW-jg-QNI">
                                 <rect key="frame" x="606" y="754" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="camerab4:" destination="CQs-Fn-uB2" eventType="touchUpInside" id="9eG-pf-yUg"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpD-pq-bYR">
                                 <rect key="frame" x="40" y="135" width="159" height="34"/>
@@ -153,6 +165,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="Picimage1" destination="Ymn-Cw-azg" id="nD6-Fd-LUz"/>
+                        <outlet property="Picimage2" destination="KS5-Pm-c4O" id="JaA-1E-Kgf"/>
+                        <outlet property="Picimage3" destination="XAN-mL-Soa" id="61N-b1-N3b"/>
+                        <outlet property="Picimage4" destination="LwS-vr-AR1" id="LKR-dM-naq"/>
                         <outlet property="textField1" destination="XpD-pq-bYR" id="gM6-b7-nS4"/>
                         <outlet property="textField2" destination="kNI-mp-yZ8" id="ZcR-q0-8Wz"/>
                         <outlet property="textField3" destination="oQR-mE-XLW" id="t8a-Ai-Mh0"/>

@@ -38,13 +38,19 @@ class Obj: Object{
    
    @objc dynamic var name: String?
 }
-//page1-picview--pickerview1
+//page1-picview--pickerview1--<原理>
 class TodoModel2: Object{
     @objc dynamic var todo2: String? = nil
 }
 class pic2picnaiyou: Object{
     @objc dynamic var pic2no1: String? = nil
     @objc dynamic var pic2no2: String? = nil
+}
+//cameraview--＜結果＞
+class kekka: Object {
+    @objc dynamic var kekkaTitle: String = ""
+    //Listの定義
+    let list3 = List<cameratext>()
 }
 class cameratext: Object{
     @objc dynamic var cametx: String? = nil

@@ -25,7 +25,7 @@ class Page3ViewController: UIViewController,UITextFieldDelegate,UITableViewDeleg
             textField.text = objData.page3nakami
     // Do any additional setup after loading the view.
     }
-    
+    //これがないと再表示できないclassにUITextFieldDelegateが必要
         textField.delegate = self
         /*
     // MARK: - Navigation

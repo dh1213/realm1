@@ -18,7 +18,8 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     let realm = try! Realm()
     //var list1: Results <TodoModel2>!
     var list1: Results <TodoModel2>!
-    var list2: Results <TodoModel>!
+    var list2: Results <kekka>!
+    
     
     // ドラムロールの列数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -41,21 +42,19 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
         switch component {
         case 0:
             if row < list1.count {
-                let data  = list1[row]
+            let data  = list1[row]
                 return data.todo2
-                
             }
             let data  = list2[row - list1.count]
-            return data.todo
+            return data.kekkaTitle
         case 1:
             if row < list1.count {
-                let data  = list1[row]
+            let data  = list1[row]
                 return data.todo2
-
             }
             let data  = list2[row - list1.count]
-            return data.todo
-        default:
+            return data.kekkaTitle
+            default:
             return nil
         }
     }
@@ -69,8 +68,8 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
                 label1.text = data.todo2
 
             } else if row < list1.count + list2.count {
-                let data  = list2[row - list1.count]
-                label1.text = data.todo
+                let data = list2[row - list1.count]
+                label1.text = data.kekkaTitle
             }
         case 1:
             if row < list1.count {
@@ -79,7 +78,7 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
 
             } else if row < list1.count + list2.count {
                 let data  = list2[row - list1.count]
-                label2.text = data.todo
+                label2.text = data.kekkaTitle
             }
         default:
             break
@@ -94,11 +93,11 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
         //Realmインスタンス***追加***
     let realm = try! Realm()
     list1 = realm.objects(TodoModel2.self)
-    list2 = realm.objects(TodoModel.self)
+    list2 = realm.objects(kekka.self)
         //***
         //ピッカーの初期値
     pickerView.selectRow(0, inComponent: 0, animated: false)
-    pickerView.selectRow(1, inComponent: 1, animated: false)
+    pickerView.selectRow(1, inComponent: 0, animated: false)
     
     }
     override func viewWillDisappear(_ animated: Bool) {

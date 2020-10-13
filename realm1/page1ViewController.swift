@@ -23,7 +23,8 @@ class page1ViewController: UIViewController,UITextFieldDelegate,UITableViewDeleg
 
     // Add ボタンをクリックした際に実行する処理
     @IBAction func tapAddButton(_ sender: Any) {
-            let instancedTodoModel2:TodoModel2 = TodoModel2()
+        
+        let instancedTodoModel2:TodoModel2 = TodoModel2()
         instancedTodoModel2.todo2 = self.todoTextFiled.text
 
         let realmInstance = try! Realm()
