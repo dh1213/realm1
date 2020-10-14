@@ -64,7 +64,7 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UIT
             //書き込み処理
         let realm = try! Realm()
             try! realm.write {
-                realm.add(task)
+                realm.add(task, update: .all)
                     }
         
         }

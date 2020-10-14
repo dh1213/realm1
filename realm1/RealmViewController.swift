@@ -50,7 +50,11 @@ class pic2picnaiyou: Object{
 class kekka: Object {
     @objc dynamic var kekkaTitle: String = ""
     //Listの定義
-    let list3 = List<cameratext>()
+    var list3 = List<cameratext>()
+
+    override static func primaryKey() -> String? {
+        return "kekkaTitle"
+    }
 }
 class cameratext: Object{
     @objc dynamic var cametx: String = ""

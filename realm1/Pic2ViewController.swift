@@ -30,9 +30,9 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView,numberOfRowsInComponent component: Int) -> Int {
     switch component {
      case 0:
-        return list1.count+list2.count
+        return list1.count + (list2.first?.list3.count ?? 0)
      case 1:
-        return list1.count+list2.count
+        return list1.count + (list2.first?.list3.count ?? 0)
      default:
       return 0
         }
@@ -45,15 +45,15 @@ class Pic2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
             let data  = list1[row]
                 return data.todo2
             }
-            let data  = list2[row - list1.count]
-            return data.kekkaTitle
+            let data  = list2.first?.list3[row - list1.count]
+            return data?.cametx
         case 1:
             if row < list1.count {
             let data  = list1[row]
                 return data.todo2
             }
-            let data  = list2[row - list1.count]
-            return data.kekkaTitle
+            let data  = list2.first?.list3[row - list1.count]
+            return data?.cametx
             default:
             return nil
         }
