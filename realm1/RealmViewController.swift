@@ -53,5 +53,5 @@ class kekka: Object {
     let list3 = List<cameratext>()
 }
 class cameratext: Object{
-    @objc dynamic var cametx: String? = nil
+    @objc dynamic var cametx: String = ""
 }

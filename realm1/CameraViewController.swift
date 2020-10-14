@@ -21,14 +21,22 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         let realm = try! Realm()
-        let obj = realm.objects(cameratext.self)
-           
-           for objData in obj{
-            textField1.text = objData.cametx
-            textField2.text = objData.cametx
-            textField3.text = objData.cametx
-            textField4.text = objData.cametx
-        // Do any additional setup after loading the view.
+        //
+        let results = realm.objects(cameratext.self)
+
+      // let obj = realm.objects(cameratext.self)
+        //
+        for (_,_) in results.enumerated(){
+        //for objData in obj{
+            textField1.text = results[0].cametx
+            textField2.text = results[1].cametx
+            textField3.text = results[2].cametx
+            textField4.text = results[3].cametx
+            
+           // textField1.text = objData.cametx
+           //textField2.text = objData.cametx
+           //textField3.text = objData.cametx
+           // textField4.text = objData.cametx
     }
         
         textField1.delegate = self
@@ -39,8 +47,9 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UIT
     }
         //***＜画面遷移で文字を保存
     override func viewWillDisappear(_ animated: Bool) {
-
-    let realm = try! Realm()
+    //***<
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         let dictionary: [String: Any] = [
             "kekkaTitle": "",
             "list3": [
@@ -50,28 +59,16 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UIT
                 ["cametx": textField4.text]
             ]
         ]
-
-            let task = kekka(value: dictionary) //Taskモデルのインスタンスの作成
-
+         //Taskモデルのインスタンスの作成
+        let task = kekka(value: dictionary)
             //書き込み処理
+        let realm = try! Realm()
             try! realm.write {
                 realm.add(task)
                     }
-        }
         
-  //  let obj = cameratext()
-  //  obj.cametx = textField1.text
-  //  obj.cametx = textField2.text
-  //  obj.cametx = textField3.text
-  //  obj.cametx = textField4.text
-  //  let realm = try! Realm()
-  // try! realm.write {
-  //  realm.add(obj)
-  //      }
-      
-   // }
-    //***＞画面遷移で画像を保存
-    
+        }
+            
     var tapNum: Int = 0
         
     @IBOutlet weak var Picimage1: UIImageView!

@@ -28,7 +28,6 @@ class page1ViewController: UIViewController,UITextFieldDelegate,UITableViewDeleg
         instancedTodoModel2.todo2 = self.todoTextFiled.text
 
         let realmInstance = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         try! realmInstance.write{
             realmInstance.add(instancedTodoModel2)
         }
