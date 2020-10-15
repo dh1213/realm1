@@ -22,22 +22,14 @@ class CameraViewController: UIViewController ,UINavigationControllerDelegate,UIT
         super.viewDidLoad()
         let realm = try! Realm()
         //
-        let results = realm.objects(cameratext.self)
+        let results = realm.objects(kekka.self)
 
-      // let obj = realm.objects(cameratext.self)
-        //
-        for (_,_) in results.enumerated(){
-        //for objData in obj{
-            textField1.text = results[0].cametx
-            textField2.text = results[1].cametx
-            textField3.text = results[2].cametx
-            textField4.text = results[3].cametx
-            
-           // textField1.text = objData.cametx
-           //textField2.text = objData.cametx
-           //textField3.text = objData.cametx
-           // textField4.text = objData.cametx
-    }
+        if let list = results.first?.list3 {
+            textField1.text = list[0].cametx
+            textField2.text = list[1].cametx
+            textField3.text = list[2].cametx
+            textField4.text = list[3].cametx
+        }
         
         textField1.delegate = self
         textField2.delegate = self
